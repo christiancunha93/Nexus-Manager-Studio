@@ -1,0 +1,108 @@
+<Window x:Class="Nexus.Desktop.SaveSelectionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Carregar Carreira"
+        Width="980"
+        Height="640"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize"
+        Background="{StaticResource NexusBackgroundBrush}">
+
+    <Grid Margin="34">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel>
+            <TextBlock Text="CARREGAR CARREIRA"
+                       FontSize="28"
+                       FontWeight="Black"/>
+            <TextBlock Text="Escolha um universo salvo."
+                       Foreground="{StaticResource NexusMutedBrush}"
+                       Margin="0,5,0,22"/>
+        </StackPanel>
+
+        <ListBox x:Name="SavesListBox"
+                 Grid.Row="1"
+                 Background="Transparent"
+                 BorderThickness="0"
+                 SelectionMode="Single">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border Background="{StaticResource NexusSurfaceBrush}"
+                            BorderBrush="{StaticResource NexusBorderBrush}"
+                            BorderThickness="1"
+                            CornerRadius="14"
+                            Padding="22"
+                            Margin="0,0,0,12"
+                            Width="880">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="84"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="210"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Border Width="62"
+                                    Height="62"
+                                    Background="{StaticResource NexusAccentDarkBrush}"
+                                    CornerRadius="31">
+                                <TextBlock Text="NM"
+                                           Foreground="White"
+                                           FontSize="18"
+                                           FontWeight="Black"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"/>
+                            </Border>
+
+                            <StackPanel Grid.Column="1"
+                                        VerticalAlignment="Center">
+                                <TextBlock Text="{Binding ManagerName}"
+                                           FontSize="19"
+                                           FontWeight="Bold"/>
+                                <TextBlock Text="{Binding Summary}"
+                                           Foreground="{StaticResource NexusAccentBrush}"
+                                           Margin="0,4,0,0"/>
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="2"
+                                        VerticalAlignment="Center">
+                                <TextBlock Text="ÚLTIMO SAVE"
+                                           Foreground="{StaticResource NexusMutedBrush}"
+                                           FontSize="10"
+                                           FontWeight="Bold"/>
+                                <TextBlock Text="{Binding LastSavedText}"
+                                           FontWeight="SemiBold"
+                                           Margin="0,4,0,0"/>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <Grid Grid.Row="2"
+              Margin="0,18,0,0">
+            <Button Content="VOLTAR"
+                    Width="140"
+                    Style="{StaticResource NexusSecondaryButtonStyle}"
+                    HorizontalAlignment="Left"
+                    Click="BackButton_Click"/>
+
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Right">
+                <Button Content="EXCLUIR"
+                        Width="140"
+                        Margin="0,0,12,0"
+                        Style="{StaticResource NexusSecondaryButtonStyle}"
+                        Click="DeleteButton_Click"/>
+                <Button Content="CARREGAR"
+                        Width="170"
+                        Style="{StaticResource NexusPrimaryButtonStyle}"
+                        Click="LoadButton_Click"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

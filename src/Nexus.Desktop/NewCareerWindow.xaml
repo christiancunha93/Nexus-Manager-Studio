@@ -1,0 +1,298 @@
+<Window x:Class="Nexus.Desktop.NewCareerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Nova Carreira"
+        Width="1120"
+        Height="720"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize"
+        Background="{StaticResource NexusBackgroundBrush}">
+
+    <Grid Background="{StaticResource NexusBackgroundBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="106"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="92"/>
+        </Grid.RowDefinitions>
+
+        <Border Background="{StaticResource NexusSurfaceBrush}"
+                BorderBrush="{StaticResource NexusBorderBrush}"
+                BorderThickness="0,0,0,1">
+            <Grid Margin="34,0">
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock Text="CRIAR UNIVERSO"
+                               FontSize="28"
+                               FontWeight="Black"/>
+                    <TextBlock x:Name="StepSubtitleText"
+                               Text="Etapa 1 de 3 • Perfil do treinador"
+                               Foreground="{StaticResource NexusMutedBrush}"
+                               FontSize="13"
+                               Margin="0,5,0,0"/>
+                </StackPanel>
+
+                <StackPanel HorizontalAlignment="Right"
+                            VerticalAlignment="Center">
+                    <TextBlock x:Name="StepNumberText"
+                               Text="01 / 03"
+                               Foreground="{StaticResource NexusAccentBrush}"
+                               FontSize="12"
+                               FontWeight="Bold"
+                               HorizontalAlignment="Right"
+                               Margin="0,0,0,8"/>
+                    <ProgressBar x:Name="WizardProgressBar"
+                                 Value="33"
+                                 Maximum="100"
+                                 Width="280"
+                                 Height="5"
+                                 Foreground="{StaticResource NexusAccentBrush}"
+                                 Background="{StaticResource NexusSurfaceAltBrush}"
+                                 BorderThickness="0"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <Grid Grid.Row="1" Margin="34,26">
+
+            <Grid x:Name="StepOnePanel">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1.2*"/>
+                    <ColumnDefinition Width="0.8*"/>
+                </Grid.ColumnDefinitions>
+
+                <Border Grid.Column="0"
+                        Background="{StaticResource NexusSurfaceBrush}"
+                        BorderBrush="{StaticResource NexusBorderBrush}"
+                        BorderThickness="1"
+                        CornerRadius="14"
+                        Padding="24"
+                        Margin="0,0,12,0">
+                    <StackPanel>
+                        <TextBlock Text="Quem é você?"
+                                   FontSize="24"
+                                   FontWeight="Black"/>
+                        <TextBlock Text="Defina a identidade que será reconhecida por jogadores, imprensa e torcida."
+                                   Foreground="{StaticResource NexusMutedBrush}"
+                                   TextWrapping="Wrap"
+                                   Margin="0,5,0,24"/>
+
+                        <TextBlock Text="NOME DO TREINADOR"
+                                   Foreground="{StaticResource NexusMutedBrush}"
+                                   FontSize="10"
+                                   FontWeight="Bold"/>
+                        <TextBox x:Name="ManagerNameTextBox"
+                                 Text="Christian Marlon"
+                                 Style="{StaticResource NexusTextBoxStyle}"
+                                 Margin="0,6,0,18"/>
+
+                        <TextBlock Text="NACIONALIDADE"
+                                   Foreground="{StaticResource NexusMutedBrush}"
+                                   FontSize="10"
+                                   FontWeight="Bold"/>
+                        <ComboBox x:Name="NationalityComboBox"
+                                  Style="{StaticResource NexusComboBoxStyle}"
+                                  SelectedIndex="0"
+                                  Margin="0,6,0,18">
+                            <ComboBoxItem Content="Brasil"/>
+                            <ComboBoxItem Content="Argentina"/>
+                            <ComboBoxItem Content="Portugal"/>
+                            <ComboBoxItem Content="Espanha"/>
+                            <ComboBoxItem Content="Inglaterra"/>
+                        </ComboBox>
+
+                        <TextBlock Text="HISTÓRICO PROFISSIONAL"
+                                   Foreground="{StaticResource NexusMutedBrush}"
+                                   FontSize="10"
+                                   FontWeight="Bold"/>
+                        <ComboBox x:Name="BackgroundComboBox"
+                                  Style="{StaticResource NexusComboBoxStyle}"
+                                  SelectedIndex="0"
+                                  Margin="0,6,0,0">
+                            <ComboBoxItem Content="Treinador iniciante"/>
+                            <ComboBoxItem Content="Ex-jogador profissional"/>
+                            <ComboBoxItem Content="Professor de Educação Física"/>
+                            <ComboBoxItem Content="Analista de desempenho"/>
+                        </ComboBox>
+                    </StackPanel>
+                </Border>
+
+                <Border Grid.Column="1"
+                        Background="{StaticResource NexusSurfaceBrush}"
+                        BorderBrush="{StaticResource NexusBorderBrush}"
+                        BorderThickness="1"
+                        CornerRadius="14"
+                        Padding="24"
+                        Margin="12,0,0,0">
+                    <StackPanel VerticalAlignment="Center">
+                        <Border Width="130"
+                                Height="130"
+                                Background="{StaticResource NexusAccentDarkBrush}"
+                                CornerRadius="65"
+                                HorizontalAlignment="Center">
+                            <TextBlock Text="CM"
+                                       Foreground="White"
+                                       FontSize="38"
+                                       FontWeight="Black"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"/>
+                        </Border>
+                        <TextBlock Text="Sua identidade será usada em notícias, contratos e no histórico permanente da carreira."
+                                   Foreground="{StaticResource NexusMutedBrush}"
+                                   TextWrapping="Wrap"
+                                   TextAlignment="Center"
+                                   Margin="0,24,0,0"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+
+            <Grid x:Name="StepTwoPanel" Visibility="Collapsed">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="SouthAmericaButton"
+                        Grid.Column="0"
+                        Margin="8"
+                        Style="{StaticResource NexusSecondaryButtonStyle}"
+                        Height="270"
+                        Content="AMÉRICA DO SUL"
+                        Click="ContinentButton_Click"/>
+
+                <Button x:Name="EuropeButton"
+                        Grid.Column="1"
+                        Margin="8"
+                        Style="{StaticResource NexusSecondaryButtonStyle}"
+                        Height="270"
+                        Content="EUROPA"
+                        Click="ContinentButton_Click"/>
+
+                <Button x:Name="NorthAmericaButton"
+                        Grid.Column="2"
+                        Margin="8"
+                        Style="{StaticResource NexusSecondaryButtonStyle}"
+                        Height="270"
+                        Content="AMÉRICA DO NORTE"
+                        Click="ContinentButton_Click"/>
+            </Grid>
+
+            <Grid x:Name="StepThreePanel" Visibility="Collapsed">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1.1*"/>
+                    <ColumnDefinition Width="0.9*"/>
+                </Grid.ColumnDefinitions>
+
+                <Border Grid.Column="0"
+                        Background="{StaticResource NexusSurfaceBrush}"
+                        BorderBrush="{StaticResource NexusBorderBrush}"
+                        BorderThickness="1"
+                        CornerRadius="14"
+                        Padding="24"
+                        Margin="0,0,12,0">
+                    <StackPanel>
+                        <TextBlock Text="Onde sua história começa?"
+                                   FontSize="24"
+                                   FontWeight="Black"/>
+                        <TextBlock Text="Escolha o país, a liga e o primeiro clube."
+                                   Foreground="{StaticResource NexusMutedBrush}"
+                                   Margin="0,5,0,24"/>
+
+                        <TextBlock Text="PAÍS"
+                                   Foreground="{StaticResource NexusMutedBrush}"
+                                   FontSize="10"
+                                   FontWeight="Bold"/>
+                        <ComboBox x:Name="CountryComboBox"
+                                  Style="{StaticResource NexusComboBoxStyle}"
+                                  SelectedIndex="0"
+                                  Margin="0,6,0,18">
+                            <ComboBoxItem Content="Brasil"/>
+                            <ComboBoxItem Content="Argentina"/>
+                            <ComboBoxItem Content="Uruguai"/>
+                        </ComboBox>
+
+                        <TextBlock Text="LIGA"
+                                   Foreground="{StaticResource NexusMutedBrush}"
+                                   FontSize="10"
+                                   FontWeight="Bold"/>
+                        <ComboBox x:Name="LeagueComboBox"
+                                  Style="{StaticResource NexusComboBoxStyle}"
+                                  SelectedIndex="0"
+                                  Margin="0,6,0,18">
+                            <ComboBoxItem Content="Liga Nacional"/>
+                            <ComboBoxItem Content="Segunda Divisão"/>
+                        </ComboBox>
+
+                        <TextBlock Text="CLUBE"
+                                   Foreground="{StaticResource NexusMutedBrush}"
+                                   FontSize="10"
+                                   FontWeight="Bold"/>
+                        <ComboBox x:Name="ClubComboBox"
+                                  Style="{StaticResource NexusComboBoxStyle}"
+                                  SelectedIndex="0"
+                                  Margin="0,6,0,0">
+                            <ComboBoxItem Content="Aurora Futebol Clube"/>
+                            <ComboBoxItem Content="Bahia Imperial"/>
+                            <ComboBoxItem Content="Real Metropolitano"/>
+                            <ComboBoxItem Content="União Paulista"/>
+                        </ComboBox>
+                    </StackPanel>
+                </Border>
+
+                <Border Grid.Column="1"
+                        Background="{StaticResource NexusSurfaceBrush}"
+                        BorderBrush="{StaticResource NexusBorderBrush}"
+                        BorderThickness="1"
+                        CornerRadius="14"
+                        Padding="24"
+                        Margin="12,0,0,0">
+                    <StackPanel>
+                        <TextBlock Text="PROJETO ESPORTIVO"
+                                   Foreground="{StaticResource NexusAccentBrush}"
+                                   FontSize="10"
+                                   FontWeight="Bold"/>
+                        <TextBlock Text="Aurora Futebol Clube"
+                                   FontSize="24"
+                                   FontWeight="Black"
+                                   Margin="0,10,0,4"/>
+                        <TextBlock Text="Reputação 77 • Caixa R$ 25 mi"
+                                   Foreground="{StaticResource NexusMutedBrush}"/>
+                        <Separator Background="{StaticResource NexusBorderBrush}"
+                                   Margin="0,22"/>
+                        <TextBlock Text="OBJETIVO INICIAL"
+                                   Foreground="{StaticResource NexusMutedBrush}"
+                                   FontSize="10"
+                                   FontWeight="Bold"/>
+                        <TextBlock Text="Classificar para uma competição continental"
+                                   FontSize="16"
+                                   FontWeight="SemiBold"
+                                   TextWrapping="Wrap"
+                                   Margin="0,7,0,0"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Grid>
+
+        <Border Grid.Row="2"
+                Background="{StaticResource NexusSurfaceBrush}"
+                BorderBrush="{StaticResource NexusBorderBrush}"
+                BorderThickness="0,1,0,0">
+            <Grid Margin="34,0">
+                <Button x:Name="BackButton"
+                        Content="VOLTAR"
+                        Width="140"
+                        Style="{StaticResource NexusSecondaryButtonStyle}"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        Click="BackButton_Click"/>
+
+                <Button x:Name="NextButton"
+                        Content="CONTINUAR"
+                        Width="190"
+                        Style="{StaticResource NexusPrimaryButtonStyle}"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        Click="NextButton_Click"/>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

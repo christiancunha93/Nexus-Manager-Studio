@@ -1,0 +1,25 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Color x:Key="NexusBackgroundColor">#081018</Color>
+    <Color x:Key="NexusSurfaceColor">#111B25</Color>
+    <Color x:Key="NexusSurfaceAltColor">#182531</Color>
+    <Color x:Key="NexusSurfaceHoverColor">#213241</Color>
+    <Color x:Key="NexusAccentColor">#19C875</Color>
+    <Color x:Key="NexusAccentDarkColor">#109A59</Color>
+    <Color x:Key="NexusTextColor">#F4F7FA</Color>
+    <Color x:Key="NexusMutedColor">#96A9BA</Color>
+    <Color x:Key="NexusBorderColor">#2A3A48</Color>
+    <Color x:Key="NexusDangerColor">#E85D68</Color>
+
+    <SolidColorBrush x:Key="NexusBackgroundBrush" Color="{StaticResource NexusBackgroundColor}"/>
+    <SolidColorBrush x:Key="NexusSurfaceBrush" Color="{StaticResource NexusSurfaceColor}"/>
+    <SolidColorBrush x:Key="NexusSurfaceAltBrush" Color="{StaticResource NexusSurfaceAltColor}"/>
+    <SolidColorBrush x:Key="NexusSurfaceHoverBrush" Color="{StaticResource NexusSurfaceHoverColor}"/>
+    <SolidColorBrush x:Key="NexusAccentBrush" Color="{StaticResource NexusAccentColor}"/>
+    <SolidColorBrush x:Key="NexusAccentDarkBrush" Color="{StaticResource NexusAccentDarkColor}"/>
+    <SolidColorBrush x:Key="NexusTextBrush" Color="{StaticResource NexusTextColor}"/>
+    <SolidColorBrush x:Key="NexusMutedBrush" Color="{StaticResource NexusMutedColor}"/>
+    <SolidColorBrush x:Key="NexusBorderBrush" Color="{StaticResource NexusBorderColor}"/>
+    <SolidColorBrush x:Key="NexusDangerBrush" Color="{StaticResource NexusDangerColor}"/>
+</ResourceDictionary>
